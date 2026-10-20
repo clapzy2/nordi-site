@@ -18,7 +18,7 @@ async function loadMirrors() {
 function checkMirror(mirror) {
   return new Promise((resolve) => {
     const siteUrl = new URL(mirror.url);
-    const probeUrl = new URL("/nordi-health.svg", siteUrl);
+    const probeUrl = new URL("nordi-health.svg", siteUrl);
     probeUrl.searchParams.set("check", Date.now().toString());
 
     const image = new Image();
