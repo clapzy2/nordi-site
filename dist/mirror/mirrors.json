@@ -1,3 +1,6 @@
 {
-  "mirrors": []
+  "mirrors": [
+    { "url": "https://nordi-vpn.ru/" },
+    { "url": "https://clapzy2.github.io/nordi-site/" }
+  ]
 }
