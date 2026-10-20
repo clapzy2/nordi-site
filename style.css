@@ -205,6 +205,10 @@ a:focus-visible {
   .cookie-note { flex-direction: column; align-items: stretch; gap: 12px; bottom: 12px; }
 }
 
+@media (max-width: 380px) {
+  .brand-light { display: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .nordi-card,
