@@ -4,6 +4,7 @@ const finderKicker = document.querySelector("#finder-kicker");
 const status = document.querySelector("#status");
 const progress = document.querySelector("#progress");
 const manualLink = document.querySelector("#manual-link");
+let redirectTimer;
 
 async function loadMirrors() {
   const response = await fetch("mirrors.json", { cache: "no-store" });
@@ -50,7 +51,9 @@ function validMirror(mirror) {
 }
 
 async function findSite() {
+  window.clearTimeout(redirectTimer);
   checkButton.disabled = true;
+  checkButton.hidden = true;
   manualLink.hidden = true;
   progress.hidden = false;
   finderKicker.textContent = "Проверяем сайт";
@@ -72,10 +75,10 @@ async function findSite() {
         manualLink.href = destination.href;
         manualLink.hidden = false;
         checkButton.hidden = true;
-        finderKicker.textContent = "Адрес проверен";
-        finderTitle.textContent = "Сайт доступен";
-        status.textContent = "Сайт доступен. Открываем его; если переход не сработает, нажмите ссылку ниже.";
-        window.setTimeout(() => window.location.assign(destination.href), 2000);
+        finderKicker.textContent = "Адрес найден";
+        finderTitle.textContent = "Переходим на сайт";
+        status.textContent = "Откроем официальный сайт Nordi через пару секунд. Если переход не сработает, нажмите кнопку ниже.";
+        redirectTimer = window.setTimeout(() => window.location.assign(destination.href), 2000);
         return;
       }
     }
@@ -89,8 +92,10 @@ async function findSite() {
     status.textContent = "Не удалось проверить адреса. Попробуйте позже или напишите в поддержку.";
   } finally {
     checkButton.disabled = false;
+    checkButton.hidden = !manualLink.hidden;
     progress.hidden = true;
   }
 }
 
 checkButton.addEventListener("click", findSite);
+window.setTimeout(findSite, 500);
