@@ -6,6 +6,7 @@
     <meta name="theme-color" content="#f7f9fc" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Nordi VPN — адрес сайта</title>
+    <script src="../theme.js"></script>
     <link rel="icon" href="../nordi-mark.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="mirror.css" />
     <script src="mirror.js" defer></script>
@@ -13,11 +14,17 @@
   <body>
     <div class="page">
       <header class="header">
-        <a class="brand" href="../" aria-label="Nordi VPN — главная">
+        <a class="brand" href="../index.html" aria-label="Nordi VPN — главная">
           <img src="../nordi-mark.svg" alt="" width="38" height="38" />
           <span>Nordi <strong>VPN</strong></span>
         </a>
-        <span class="header-note">Адрес сайта</span>
+        <div class="header-controls">
+          <span class="header-note">Адрес сайта</span>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Переключить тему" aria-pressed="false">
+            <span class="theme-sun" aria-hidden="true">☀</span>
+            <span class="theme-moon" aria-hidden="true">☾</span>
+          </button>
+        </div>
       </header>
 
       <main class="main">
@@ -29,8 +36,8 @@
             Вы перейдёте только на официальный сайт Nordi.
           </p>
           <div class="quick-links">
-            <a href="https://t.me/nordi_vpn_bot">Открыть бот <span aria-hidden="true">↗</span></a>
-            <a href="https://t.me/nordi_support_bot">Поддержка <span aria-hidden="true">↗</span></a>
+            <a href="https://t.me/nordi_vpn_bot">Открыть бот</a>
+            <a href="https://t.me/nordi_support_bot">Поддержка</a>
           </div>
         </div>
 
@@ -45,7 +52,7 @@
           </p>
           <div id="progress" class="progress" aria-hidden="true" hidden><span></span></div>
           <button id="check-button" type="button">Проверить адреса</button>
-          <a id="manual-link" class="manual-link" href="#" hidden>Перейти вручную <span aria-hidden="true">↗</span></a>
+          <a id="manual-link" class="manual-link" href="#" hidden>Перейти вручную</a>
           <p class="fine-print">Адрес проверяется перед переходом. Мы не запрашиваем пароль или платёжные данные на этой странице.</p>
         </section>
       </main>
@@ -61,5 +68,9 @@
         </div>
       </div>
     </footer>
+    <aside class="cookie-note" data-cookie-note hidden aria-label="Уведомление о cookie">
+      <p>Мы используем только функциональные cookie: они запоминают тему и закрытие этого уведомления. Аналитики и рекламы на сайте нет.</p>
+      <button type="button" data-cookie-dismiss>Понятно</button>
+    </aside>
   </body>
 </html>

@@ -7,12 +7,13 @@
     <meta name="robots" content="noindex, nofollow" />
     <meta name="description" content="Nordi VPN — личный кабинет, подключение и поддержка в Telegram. Сейчас идёт закрытая бета." />
     <title>Nordi VPN — закрытая бета</title>
+    <script src="theme.js"></script>
     <link rel="icon" href="nordi-mark.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="site-header wrap">
-      <a class="brand" href="./" aria-label="Nordi VPN — главная">
+      <a class="brand" href="index.html" aria-label="Nordi VPN — главная">
         <img src="nordi-mark.svg" width="42" height="42" alt="" />
         <span>Nordi<span class="brand-light"> VPN</span></span>
       </a>
@@ -21,7 +22,13 @@
         <a href="#how-it-works">Подключение</a>
         <a href="#support">Поддержка</a>
       </nav>
-      <a class="header-action" href="https://t.me/nordi_vpn_bot">Открыть бот <span aria-hidden="true">↗</span></a>
+      <div class="header-controls">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Переключить тему" aria-pressed="false">
+          <span class="theme-sun" aria-hidden="true">☀</span>
+          <span class="theme-moon" aria-hidden="true">☾</span>
+        </button>
+        <a class="header-action" href="https://t.me/nordi_vpn_bot">Открыть бот</a>
+      </div>
     </header>
 
     <main>
@@ -31,8 +38,8 @@
           <h1 id="hero-title">Ваш доступ.<br /><em>Ваши устройства.</em><br />Один Nordi.</h1>
           <p class="hero-lead">Управляйте VPN-подключением в Telegram: создавайте доступ для устройства, смотрите расход и получайте помощь в одном кабинете.</p>
           <div class="hero-actions">
-            <a class="button primary" href="https://t.me/nordi_vpn_bot">Открыть Nordi VPN <span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="#how-it-works">Как это работает <span aria-hidden="true">↓</span></a>
+            <a class="button primary" href="https://t.me/nordi_vpn_bot">Открыть Nordi VPN</a>
+            <a class="text-link" href="#how-it-works">Как это работает</a>
           </div>
           <p class="hero-note">Новые платные подписки пока не продаются. Доступ к бете выдаёт команда.</p>
         </div>
@@ -59,15 +66,19 @@
       <section class="plans wrap" id="plans" aria-labelledby="plans-title">
         <div class="section-heading"><p class="eyebrow">Подписки</p><h2 id="plans-title">Выберите свой формат</h2><p>Условия платного запуска уточняются. Итоговая цена появится до оформления заказа.</p></div>
         <div class="plan-grid">
-          <article class="plan"><div class="plan-top"><span>01 / Базовый</span><span class="plan-state">Готовится</span></div><h3>На каждый день</h3><p>Доступ для телефона и компьютера с общим пакетом трафика.</p><ul><li>До 2 устройств</li><li>300 ГБ в месяц</li><li>Нидерланды и Швеция</li></ul><a href="https://t.me/nordi_vpn_bot">Смотреть в боте <span aria-hidden="true">↗</span></a></article>
-          <article class="plan plus"><div class="plan-top"><span>02 / Plus</span><span class="plan-state">Готовится</span></div><h3>Больше возможностей</h3><p>Расширенный пакет и дополнительные варианты подключения.</p><ul><li>До 2 устройств</li><li>400 ГБ в месяц</li><li>Нидерланды и Швеция</li></ul><a href="https://t.me/nordi_vpn_bot">Смотреть в боте <span aria-hidden="true">↗</span></a></article>
+          <article class="plan"><div class="plan-top"><span>Базовый</span><span class="plan-state">Готовится</span></div><h3>На каждый день</h3><p>Доступ для телефона и компьютера с общим пакетом трафика.</p><ul><li>До 2 устройств</li><li>300 ГБ в месяц</li><li>Нидерланды и Швеция</li></ul><a href="https://t.me/nordi_vpn_bot">Смотреть в боте</a></article>
+          <article class="plan plus"><div class="plan-top"><span>Plus</span><span class="plan-state">Готовится</span></div><h3>Больше возможностей</h3><p>Расширенный пакет и дополнительные варианты подключения.</p><ul><li>До 2 устройств</li><li>400 ГБ в месяц</li><li>Нидерланды и Швеция</li></ul><a href="https://t.me/nordi_vpn_bot">Смотреть в боте</a></article>
         </div>
         <p class="plan-disclaimer">Параметры и цены до запуска могут измениться. Продажи сейчас выключены.</p>
       </section>
 
-      <section class="support-band" id="support" aria-labelledby="support-title"><div class="wrap support-inner"><div><p class="eyebrow">Помощь рядом</p><h2 id="support-title">Нужна помощь с подключением?</h2><p>Опишите устройство и проблему. Не присылайте пароли, личные ссылки и ключи доступа.</p></div><a class="button secondary" href="https://t.me/nordi_support_bot">Написать в поддержку <span aria-hidden="true">↗</span></a></div></section>
+      <section class="support-band" id="support" aria-labelledby="support-title"><div class="wrap support-inner"><div><p class="eyebrow">Помощь рядом</p><h2 id="support-title">Нужна помощь с подключением?</h2><p>Опишите устройство и проблему. Не присылайте пароли, личные ссылки и ключи доступа.</p></div><a class="button secondary" href="https://t.me/nordi_support_bot">Написать в поддержку</a></div></section>
     </main>
 
     <footer class="site-footer wrap"><div class="footer-brand"><img src="nordi-mark.svg" width="32" height="32" alt="" /><span>Nordi VPN</span></div><p>Закрытая бета · 2026</p><div class="footer-links"><a href="https://t.me/nordi_vpn_bot">Бот</a><a href="https://t.me/nordi_support_bot">Поддержка</a></div></footer>
+    <aside class="cookie-note" data-cookie-note hidden aria-label="Уведомление о cookie">
+      <p>Мы используем только функциональные cookie: они запоминают тему и закрытие этого уведомления. Аналитики и рекламы на сайте нет.</p>
+      <button type="button" data-cookie-dismiss>Понятно</button>
+    </aside>
   </body>
 </html>
