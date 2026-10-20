@@ -210,3 +210,70 @@ button:not(.theme-toggle):hover,
   body,
   .finder { transition: none; }
 }
+
+/* Keep the redirect page quiet while the destination is checked. */
+.page {
+  padding-top: 44px;
+}
+
+.main {
+  min-height: 640px;
+  gap: clamp(48px, 6vw, 100px);
+}
+
+.intro {
+  padding-bottom: 20px;
+}
+
+.eyebrow {
+  letter-spacing: .1em;
+}
+
+h1 {
+  max-width: 700px;
+  font-size: clamp(52px, 5.8vw, 84px);
+}
+
+.finder {
+  border-width: 14px;
+  border-radius: 34px;
+  box-shadow: none;
+}
+
+.finder-kicker {
+  margin-top: 0;
+  letter-spacing: .08em;
+}
+
+.status {
+  min-height: 72px;
+}
+
+.quick-links a {
+  border-radius: 999px;
+}
+
+.footer-inner {
+  padding-block: 42px;
+}
+
+@media (max-width: 850px) {
+  .main {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .page {
+    padding-top: 20px;
+  }
+
+  .main {
+    padding-top: 48px;
+  }
+
+  .finder {
+    border-width: 9px;
+    border-radius: 28px;
+  }
+}
