@@ -160,7 +160,9 @@ h1 em { color: var(--accent); font-style: normal; }
   overflow: hidden;
   border: 1px solid #31546a;
   border-radius: 14px;
-  background: radial-gradient(circle at 50% 48%, #23465d 0, #152d40 44%, #0d1c2c 100%);
+  background:
+    repeating-radial-gradient(circle at 50% 48%, transparent 0 44px, #86deeb0d 45px 46px),
+    radial-gradient(circle at 50% 48%, #23465d 0, #152d40 44%, #0d1c2c 100%);
   color: #d3edf3;
 }
 .art-ring {
@@ -215,7 +217,7 @@ h1 em { color: var(--accent); font-style: normal; }
   animation: art-breathe 8s ease-in-out infinite;
 }
 .art-center img { display: block; border-radius: 28px; box-shadow: 0 20px 55px #08152288; }
-.art-coordinate, .art-caption {
+.art-coordinate, .art-footnote {
   position: absolute;
   font-size: 11px;
   font-weight: 650;
@@ -223,7 +225,25 @@ h1 em { color: var(--accent); font-style: normal; }
   text-transform: uppercase;
 }
 .art-coordinate { top: 28px; left: 28px; }
-.art-caption { right: 28px; bottom: 28px; }
+.art-footnote {
+  right: 28px;
+  bottom: 28px;
+  left: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.art-footnote-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, #86deeb, #86deeb45);
+}
+.hero-copy > * { animation: hero-arrive 600ms both; }
+.hero-copy > :nth-child(2) { animation-delay: 90ms; }
+.hero-copy > :nth-child(3) { animation-delay: 160ms; }
+.hero-copy > :nth-child(4) { animation-delay: 230ms; }
+.hero-copy > :nth-child(5) { animation-delay: 300ms; }
+.hero-art { animation: hero-arrive 750ms 150ms both; }
 
 .steps { padding-block: 85px 95px; border-block: 1px solid var(--line); background: var(--section); }
 .section-heading h2, .support-inner h2 {
@@ -329,6 +349,10 @@ body, .steps, .plan, .support-band, .header-action, .theme-toggle, .cookie-note 
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
+@keyframes hero-arrive {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 @media (max-width: 850px) {
   .site-header { gap: 18px; }
   .site-header nav { display: none; }
@@ -367,6 +391,7 @@ body, .steps, .plan, .support-band, .header-action, .theme-toggle, .cookie-note 
   html { scroll-behavior: auto; }
   .art-center { animation: none; }
   .art-ring-inner, .art-ring-outer { animation: none; }
+  .hero-copy > *, .hero-art { animation: none; }
   body, .steps, .plan, .support-band, .header-action, .theme-toggle,
   .theme-sun, .theme-moon, .cookie-note { transition: none; }
 }
