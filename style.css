@@ -171,12 +171,28 @@ h1 em { color: var(--accent); font-style: normal; }
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
-.art-ring-inner { width: 250px; height: 250px; }
+.art-ring-inner {
+  width: 250px;
+  height: 250px;
+  border-right-color: #8bdeea70;
+  animation: art-orbit 18s linear infinite reverse;
+}
+.art-ring-inner::after {
+  position: absolute;
+  right: 16px;
+  bottom: 20px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #b4eaf0;
+  box-shadow: 0 0 12px #86deeb78;
+  content: "";
+}
 .art-ring-outer {
   width: 430px;
   height: 430px;
   border-top-color: #8bdeea9c;
-  animation: art-orbit 24s linear infinite;
+  animation: art-orbit 20s linear infinite;
 }
 .art-ring-outer::after {
   position: absolute;
@@ -346,7 +362,7 @@ body, .steps, .plan, .support-band, .header-action, .theme-toggle, .cookie-note 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .art-center { animation: none; }
-  .art-ring-outer { animation: none; }
+  .art-ring-inner, .art-ring-outer { animation: none; }
   body, .steps, .plan, .support-band, .header-action, .theme-toggle,
   .theme-sun, .theme-moon, .cookie-note { transition: none; }
 }
