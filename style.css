@@ -172,7 +172,23 @@ h1 em { color: var(--accent); font-style: normal; }
   transform: translate(-50%, -50%);
 }
 .art-ring-inner { width: 250px; height: 250px; }
-.art-ring-outer { width: 430px; height: 430px; }
+.art-ring-outer {
+  width: 430px;
+  height: 430px;
+  border-top-color: #8bdeea9c;
+  animation: art-orbit 24s linear infinite;
+}
+.art-ring-outer::after {
+  position: absolute;
+  top: 48px;
+  left: 48px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #a8edf3;
+  box-shadow: 0 0 20px #86deeb94;
+  content: "";
+}
 .art-center {
   position: absolute;
   top: 50%;
@@ -289,6 +305,10 @@ body, .steps, .plan, .support-band, .header-action, .theme-toggle, .cookie-note 
   0%, 100% { transform: translate(-50%, -50%) scale(1); }
   50% { transform: translate(-50%, -51.5%) scale(1.025); }
 }
+@keyframes art-orbit {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
 @media (max-width: 850px) {
   .site-header { gap: 18px; }
   .site-header nav { display: none; }
@@ -326,6 +346,7 @@ body, .steps, .plan, .support-band, .header-action, .theme-toggle, .cookie-note 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .art-center { animation: none; }
+  .art-ring-outer { animation: none; }
   body, .steps, .plan, .support-band, .header-action, .theme-toggle,
   .theme-sun, .theme-moon, .cookie-note { transition: none; }
 }
