@@ -271,6 +271,8 @@ h1 em { color: var(--accent); font-style: normal; }
 .plan-state { color: var(--muted); }
 .plan h3 { margin: 37px 0 8px; font-size: 27px; font-weight: 700; letter-spacing: -.04em; }
 .plan p { margin: 0; color: var(--muted); }
+.plan .plan-price { margin: 0 0 6px; color: var(--text); font-size: 22px; font-weight: 700; }
+.plan .plan-price + p { margin-bottom: 18px; font-size: 13px; }
 .plan ul { margin: auto 0 0; padding: 23px 0 25px; list-style: none; }
 .plan li { padding: 10px 0; border-bottom: 1px solid var(--line); }
 .plan a { width: fit-content; color: var(--accent); font-weight: 700; }
