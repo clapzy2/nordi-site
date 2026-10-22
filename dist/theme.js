@@ -1,18 +1,27 @@
 (() => {
   const cookie = (name) => {
-    const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
-    return match ? decodeURIComponent(match[1]) : null;
+    try {
+      const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
+      return match ? decodeURIComponent(match[1]) : null;
+    } catch {
+      return null;
+    }
   };
 
   const saveCookie = (name, value) => {
     const secure = location.protocol === "https:" ? "; Secure" : "";
-    document.cookie = `${name}=${encodeURIComponent(value)}; Max-Age=31536000; Path=/; SameSite=Lax${secure}`;
+    try {
+      document.cookie = `${name}=${encodeURIComponent(value)}; Max-Age=31536000; Path=/; SameSite=Lax${secure}`;
+    } catch {
+      // Theme selection still works when browser storage is blocked.
+    }
   };
 
   const systemTheme = window.matchMedia?.("(prefers-color-scheme: light)").matches
     ? "light"
     : "dark";
-  let theme = cookie("nordi_theme") || systemTheme;
+  const savedTheme = cookie("nordi_theme");
+  let theme = ["light", "dark"].includes(savedTheme) ? savedTheme : systemTheme;
 
   const applyTheme = () => {
     document.documentElement.dataset.theme = theme;
