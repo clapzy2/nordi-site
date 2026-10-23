@@ -1,7 +1,9 @@
 (() => {
   const cookie = (name) => {
     try {
-      const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
+      const match = document.cookie.match(
+        new RegExp(`(?:^|; )${name}=([^;]*)`),
+      );
       return match ? decodeURIComponent(match[1]) : null;
     } catch {
       return null;
@@ -17,7 +19,8 @@
     }
   };
 
-  const systemTheme = window.matchMedia?.("(prefers-color-scheme: light)").matches
+  const systemTheme = window.matchMedia?.("(prefers-color-scheme: light)")
+    .matches
     ? "light"
     : "dark";
   const savedTheme = cookie("nordi_theme");
@@ -40,6 +43,7 @@
   applyTheme();
 
   document.addEventListener("DOMContentLoaded", () => {
+    applyTheme();
     document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
       button.addEventListener("click", () => {
         theme = theme === "light" ? "dark" : "light";
@@ -51,10 +55,12 @@
     const notice = document.querySelector("[data-cookie-note]");
     if (notice && !cookie("nordi_notice")) {
       notice.hidden = false;
-      notice.querySelector("[data-cookie-dismiss]").addEventListener("click", () => {
-        saveCookie("nordi_notice", "seen");
-        notice.hidden = true;
-      });
+      notice
+        .querySelector("[data-cookie-dismiss]")
+        .addEventListener("click", () => {
+          saveCookie("nordi_notice", "seen");
+          notice.hidden = true;
+        });
     }
   });
 })();
