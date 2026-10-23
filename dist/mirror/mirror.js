@@ -7,13 +7,22 @@ const manualLink = document.querySelector("#manual-link");
 let redirectTimer;
 
 async function loadMirrors() {
-  const response = await fetch("mirrors.json", { cache: "no-store" });
-  if (!response.ok) {
-    throw new Error("Не удалось загрузить список адресов.");
-  }
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 5000);
+  try {
+    const response = await fetch("mirrors.json", {
+      cache: "no-store",
+      signal: controller.signal,
+    });
+    if (!response.ok) {
+      throw new Error("Не удалось загрузить список адресов.");
+    }
 
-  const data = await response.json();
-  return Array.isArray(data.mirrors) ? data.mirrors : [];
+    const data = await response.json();
+    return Array.isArray(data.mirrors) ? data.mirrors : [];
+  } finally {
+    window.clearTimeout(timeout);
+  }
 }
 
 function checkMirror(mirror) {
@@ -65,7 +74,8 @@ async function findSite() {
     if (mirrors.length === 0) {
       finderKicker.textContent = "Пока без перехода";
       finderTitle.textContent = "Адреса готовятся";
-      status.textContent = "Постоянные адреса ещё не подключены. Пока откройте бот Nordi или напишите в поддержку.";
+      status.textContent =
+        "Постоянные адреса ещё не подключены. Пока откройте бот Nordi или напишите в поддержку.";
       return;
     }
 
@@ -77,19 +87,25 @@ async function findSite() {
         checkButton.hidden = true;
         finderKicker.textContent = "Адрес найден";
         finderTitle.textContent = "Переходим на сайт";
-        status.textContent = "Откроем официальный сайт Nordi через пару секунд. Если переход не сработает, нажмите кнопку ниже.";
-        redirectTimer = window.setTimeout(() => window.location.assign(destination.href), 2000);
+        status.textContent =
+          "Откроем официальный сайт Nordi через пару секунд. Если переход не сработает, нажмите кнопку ниже.";
+        redirectTimer = window.setTimeout(
+          () => window.location.assign(destination.href),
+          2000,
+        );
         return;
       }
     }
 
     finderKicker.textContent = "Нет соединения";
     finderTitle.textContent = "Адрес не найден";
-    status.textContent = "Сейчас ни один адрес не отвечает. Попробуйте позже или напишите в поддержку.";
+    status.textContent =
+      "Сейчас ни один адрес не отвечает. Попробуйте позже или напишите в поддержку.";
   } catch {
     finderKicker.textContent = "Ошибка проверки";
     finderTitle.textContent = "Не удалось проверить";
-    status.textContent = "Не удалось проверить адреса. Попробуйте позже или напишите в поддержку.";
+    status.textContent =
+      "Не удалось проверить адреса. Попробуйте позже или напишите в поддержку.";
   } finally {
     checkButton.disabled = false;
     checkButton.hidden = !manualLink.hidden;
