@@ -9,7 +9,7 @@
     <title>Nordi VPN — закрытая бета</title>
     <script src="theme.js?v=4"></script>
     <link rel="icon" href="nordi-mark.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="style.css?v=9" />
+    <link rel="stylesheet" href="style.css?v=10" />
   </head>
   <body>
     <header class="site-header wrap">
@@ -36,20 +36,18 @@
         <div class="hero-copy">
           <p class="eyebrow"><span class="status-dot"></span> Nordi · закрытая бета</p>
           <h1 id="hero-title">VPN в Telegram.<br /><em>Доступ под рукой.</em></h1>
-          <p class="hero-lead">Подключайте устройства, проверяйте подписку и расход трафика, обращайтесь за помощью — всё в одном кабинете Nordi.</p>
+          <p class="hero-lead">Подключение, подписка и помощь — в одном кабинете. Для телефона и компьютера.</p>
           <div class="hero-actions">
             <a class="button primary" href="https://t.me/nordi_vpn_bot">Открыть Nordi VPN</a>
             <a class="text-link" href="#how-it-works">Как это работает</a>
           </div>
           <p class="hero-note">Новые платные подписки пока не продаются. Доступ к бете выдаёт команда.</p>
         </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="art-ring art-ring-outer"></div>
-          <div class="art-ring art-ring-inner"></div>
-          <div class="art-center"><img src="nordi-mark.svg" width="124" height="124" alt="" /></div>
-          <span class="art-coordinate">NORDI / 01</span>
-          <div class="art-footnote"><span>Telegram</span><span class="art-footnote-line"></span><span>Ваше устройство</span></div>
-        </div>
+        <figure class="hero-art">
+          <img class="hero-landscape" src="nordi-connect.png" width="1672" height="941" alt="Ноутбук и телефон на фоне северного сияния — иллюстрация Nordi" fetchpriority="high" />
+          <div class="art-signature" aria-hidden="true"><img src="nordi-mark.svg" width="42" height="42" alt="" /><span>Nordi VPN ❄️</span></div>
+          <figcaption><strong>Два устройства.<br />Один кабинет.</strong><span>iOS · Android · Windows · macOS</span></figcaption>
+        </figure>
       </section>
 
       <section class="steps" id="how-it-works" aria-labelledby="steps-title">
@@ -66,10 +64,26 @@
       <section class="plans wrap" id="plans" aria-labelledby="plans-title">
         <div class="section-heading"><p class="eyebrow">Подписки</p><h2 id="plans-title">Тарифы Nordi</h2><p>Цены для будущего запуска. Сейчас оплата выключена.</p></div>
         <div class="plan-grid">
-          <article class="plan"><div class="plan-top"><span>Базовый</span><span class="plan-state">Готовится</span></div><h3>На каждый день</h3><p>Доступ для телефона и компьютера с общим пакетом трафика.</p><ul><li>До 2 устройств</li><li>300 ГБ каждые 30 дней</li><li>Доступные локации</li></ul><p class="plan-price">179 ₽ / месяц</p><p>3 месяца — 499 ₽ · 6 месяцев — 949 ₽</p><a href="https://t.me/nordi_vpn_bot">Смотреть в боте</a></article>
-          <article class="plan plus"><div class="plan-top"><span>Расширенный</span><span class="plan-state">Готовится</span></div><h3>Больше маршрутов</h3><p>Доступные локации и дополнительные маршруты. Их доступность зависит от сети.</p><ul><li>До 2 устройств</li><li>400 ГБ каждые 30 дней</li><li>Дополнительные маршруты</li></ul><p class="plan-price">399 ₽ / месяц</p><p>3 месяца — 1 139 ₽ · 6 месяцев — 2 159 ₽</p><a href="https://t.me/nordi_vpn_bot">Смотреть в боте</a></article>
+          <article class="plan">
+            <div class="plan-top"><span>На каждый день</span><span class="plan-state">Бета</span></div>
+            <h3>Базовый</h3>
+            <p>Для привычных задач на телефоне и компьютере.</p>
+            <p class="plan-price">179 ₽ <span>/ месяц</span></p>
+            <p class="plan-periods">3 месяца — 499 ₽ · 6 месяцев — 949 ₽</p>
+            <ul><li><strong>300 ГБ</strong> каждые 30 дней</li><li>До 2 устройств</li><li>Доступные локации</li></ul>
+            <a href="https://t.me/nordi_vpn_bot">Смотреть в боте <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="plan plus">
+            <div class="plan-top"><span>Больше возможностей</span><span class="plan-state">Бета</span></div>
+            <h3>Расширенный</h3>
+            <p>Дополнительные маршруты и увеличенный пакет.</p>
+            <p class="plan-price">399 ₽ <span>/ месяц</span></p>
+            <p class="plan-periods">3 месяца — 1 139 ₽ · 6 месяцев — 2 159 ₽</p>
+            <ul><li><strong>400 ГБ</strong> каждые 30 дней</li><li>До 2 устройств</li><li>Дополнительные маршруты</li></ul>
+            <a href="https://t.me/nordi_vpn_bot">Смотреть в боте <span aria-hidden="true">↗</span></a>
+          </article>
         </div>
-        <p class="plan-disclaimer">Цены указаны за весь срок подписки без автопродления. Параметры и цены до запуска могут измениться. Продажи сейчас выключены.</p>
+        <p class="plan-disclaimer">Цена за 3 и 6 месяцев указана за весь срок. Без автопродления. Доступность маршрутов зависит от сети. До запуска условия могут измениться; оплата пока выключена.</p>
       </section>
 
       <section class="support-band" id="support" aria-labelledby="support-title"><div class="wrap support-inner"><div><p class="eyebrow">Помощь рядом</p><h2 id="support-title">Нужна помощь с подключением?</h2><p>Опишите устройство и проблему. Не присылайте пароли, личные ссылки и ключи доступа.</p></div><a class="button secondary" href="https://t.me/nordi_support_bot">Написать в поддержку</a></div></section>
