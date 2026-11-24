@@ -22,27 +22,17 @@ if (!reducedMotion.matches && "IntersectionObserver" in window) {
 
 // Ambient movement stays inside the illustration and sleeps off screen.
 const scene = document.querySelector(".connection-scene");
-const motionToggle = document.querySelector(".motion-toggle");
-let userPaused = false;
 let sceneVisible = true;
 
 function updateSceneMotion() {
   if (!scene) return;
   scene.classList.toggle(
     "motion-paused",
-    userPaused || !sceneVisible || document.hidden || reducedMotion.matches,
+    !sceneVisible || document.hidden || reducedMotion.matches,
   );
 }
 
-if (scene && motionToggle) {
-  motionToggle.addEventListener("click", () => {
-    userPaused = !userPaused;
-    motionToggle.setAttribute("aria-pressed", String(userPaused));
-    motionToggle.textContent = userPaused
-      ? "▷ Продолжить анимацию"
-      : "Ⅱ Пауза анимации";
-    updateSceneMotion();
-  });
+if (scene) {
   document.addEventListener("visibilitychange", updateSceneMotion);
   reducedMotion.addEventListener("change", updateSceneMotion);
   if ("IntersectionObserver" in window) {
@@ -110,7 +100,7 @@ for (const button of deviceButtons) {
 // Pointer depth is decorative; touch scrolling and keyboard focus stay native.
 if (scene && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
   scene.addEventListener("pointermove", (event) => {
-    if (userPaused || reducedMotion.matches) return;
+    if (reducedMotion.matches) return;
     const bounds = scene.getBoundingClientRect();
     const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 10;
     const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 8;

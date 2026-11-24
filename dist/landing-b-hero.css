@@ -184,28 +184,6 @@
 .preview-action:hover {
   color: #fff;
 }
-.motion-toggle {
-  position: absolute;
-  bottom: -5px;
-  right: 4%;
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  color: #91a6ae;
-  background: transparent;
-  border: 0;
-  padding: 6px 0;
-  cursor: pointer;
-  font: inherit;
-  font-size: 10px;
-}
-.motion-toggle:hover {
-  color: #d5e6e7;
-}
-.motion-toggle:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 4px;
-}
 .route-trace {
   stroke-dasharray: 8 92;
   stroke-dashoffset: 10;
@@ -392,8 +370,5 @@
     stroke-dasharray: none;
     stroke-width: 1;
     opacity: 0.5;
-  }
-  .motion-toggle {
-    display: none;
   }
 }
