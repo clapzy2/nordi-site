@@ -12,9 +12,9 @@
     />
     <link rel="icon" type="image/svg+xml" href="nordi-mark.svg" />
     <link rel="stylesheet" href="landing-b.css?v=6" />
-    <link rel="stylesheet" href="landing-b-hero.css?v=9" />
+    <link rel="stylesheet" href="landing-b-hero.css?v=10" />
     <link rel="stylesheet" href="landing-b-sections.css?v=7" />
-    <script src="landing-b.js?v=8" defer></script>
+    <script src="landing-b.js?v=9" defer></script>
   </head>
   <body class="dark">
     <header class="header wrap">
@@ -36,6 +36,7 @@
         ><a href="#help">Помощь</a>
       </nav>
       <section class="hero wrap" id="top">
+        <canvas class="aurora-canvas" aria-hidden="true"></canvas>
         <div class="hero-copy">
           <p class="eyebrow">VPN ДЛЯ ВАШИХ ПОВСЕДНЕВНЫХ ДЕЛ</p>
           <h1>Интернет.<br />В вашем<br /><em>ритме.</em></h1>
@@ -55,50 +56,15 @@
             <span></span> Закрытая бета · доступ выдаёт команда
           </p>
         </div>
-        <figure class="connection-scene">
-          <figcaption class="scene-caption">Пример подключения</figcaption>
-          <div class="scene-stage">
-            <div class="scene-grid">
-              <div class="scene-track" aria-hidden="true">
-                <span class="scene-signal"></span>
-              </div>
-              <div class="scene-station">
-                <div class="scene-node scene-phone" aria-hidden="true">
-                  <span></span>
-                </div>
-                <span>Телефон</span>
-              </div>
-              <div class="scene-station">
-                <div class="scene-node scene-nordi" aria-hidden="true">
-                  <img src="nordi-mark.svg" alt="" width="76" height="76" />
-                </div>
-                <strong>Nordi</strong>
-              </div>
-              <div class="scene-station">
-                <div class="scene-node scene-internet" aria-hidden="true">
-                  <span></span>
-                </div>
-                <span>Интернет</span>
-              </div>
-            </div>
+        <div
+          class="aurora-art"
+          role="img"
+          aria-label="Знак Nordi под северным сиянием"
+        >
+          <div class="aurora-emblem">
+            <img src="nordi-mark.svg" alt="" width="280" height="280" />
           </div>
-          <div class="scene-footer">
-            <span
-              class="scene-status"
-              role="img"
-              aria-label="Пример состояния подключения"
-            >
-              <span class="scene-status-dot" aria-hidden="true"></span>
-              <span class="scene-status-label" aria-hidden="true">
-                <span class="scene-waiting">Подключаемся</span>
-                <span>Подключено</span>
-              </span>
-            </span>
-            <a href="#start" class="scene-action"
-              >Настроить VPN <span aria-hidden="true">↗</span></a
-            >
-          </div>
-        </figure>
+        </div>
       </section>
       <div class="facts wrap">
         <div>
