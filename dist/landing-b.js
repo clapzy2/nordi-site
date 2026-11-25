@@ -96,19 +96,3 @@ for (const button of deviceButtons) {
       `Выберите ${device}. Установите VPN-приложение по инструкции из кабинета.`;
   });
 }
-
-// Pointer depth is decorative; touch scrolling and keyboard focus stay native.
-if (scene && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-  scene.addEventListener("pointermove", (event) => {
-    if (reducedMotion.matches) return;
-    const bounds = scene.getBoundingClientRect();
-    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 10;
-    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 8;
-    scene.style.setProperty("--scene-x", `${x}px`);
-    scene.style.setProperty("--scene-y", `${y}px`);
-  });
-  scene.addEventListener("pointerleave", () => {
-    scene.style.setProperty("--scene-x", "0px");
-    scene.style.setProperty("--scene-y", "0px");
-  });
-}

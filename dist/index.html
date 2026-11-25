@@ -12,9 +12,9 @@
     />
     <link rel="icon" type="image/svg+xml" href="nordi-mark.svg" />
     <link rel="stylesheet" href="landing-b.css?v=6" />
-    <link rel="stylesheet" href="landing-b-hero.css?v=7" />
-    <link rel="stylesheet" href="landing-b-sections.css?v=6" />
-    <script src="landing-b.js?v=7" defer></script>
+    <link rel="stylesheet" href="landing-b-hero.css?v=8" />
+    <link rel="stylesheet" href="landing-b-sections.css?v=7" />
+    <script src="landing-b.js?v=8" defer></script>
   </head>
   <body class="dark">
     <header class="header wrap">
@@ -157,32 +157,17 @@
               <circle cx="340" cy="248" r="202" stroke-dasharray="1 14" />
             </g>
             <path
-              class="route-base"
+              id="route-primary"
               d="M155 300C220 300 242 248 340 248S438 112 495 112"
               stroke="url(#route-ink)"
               stroke-width="1.5"
             />
             <path
-              class="route-trace"
-              d="M155 300C220 300 242 248 340 248S438 112 495 112"
-              pathLength="100"
-              stroke="#d1f5e7"
-              stroke-width="2.5"
-            />
-            <path
-              class="route-secondary"
+              id="route-secondary"
               d="M155 300C218 365 260 248 340 248S435 180 495 112"
-              pathLength="100"
               stroke="#83b6c2"
               stroke-width="1"
               stroke-opacity=".45"
-            />
-            <path
-              class="route-trace trace-secondary"
-              d="M155 300C218 365 260 248 340 248S435 180 495 112"
-              pathLength="100"
-              stroke="#9acbd0"
-              stroke-width="2"
             />
             <circle
               class="route-particle particle-one"
@@ -198,7 +183,7 @@
               <circle cx="155" cy="300" r="3.5" />
               <circle cx="495" cy="112" r="3.5" />
             </g>
-            <g class="route-halo" stroke="#a4e7dc" stroke-opacity=".3">
+            <g stroke="#a4e7dc" stroke-opacity=".3">
               <circle cx="155" cy="300" r="9" />
               <circle cx="495" cy="112" r="9" />
             </g>
